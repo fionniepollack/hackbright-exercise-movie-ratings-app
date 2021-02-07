@@ -40,7 +40,7 @@ class Movie(db.Model):
     # ratings = a list of Rating objects
 
     def __repr__(self):
-        return f'<User movie_id={self.movie_id} title={self.title}>'
+        return f'<Movie movie_id={self.movie_id} title={self.title}>'
 
 
 class Rating(db.Model):
@@ -59,7 +59,7 @@ class Rating(db.Model):
     user = db.relationship('User', backref='ratings')
     
     def __repr__(self):
-        return f'<User rating_id={self.rating_id} score={self.score}>'
+        return f'<Rating rating_id={self.rating_id} score={self.score}>'
 
 
 def connect_to_db(flask_app, db_uri='postgresql:///ratings', echo=True):
